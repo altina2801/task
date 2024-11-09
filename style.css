@@ -10,9 +10,11 @@ body {
 
 .container {
   display: flex;
-  width: 800px;
+  width: 700px; /* Adjust width to fit content better */
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -20,11 +22,28 @@ body {
   padding: 20px;
   background-color: #f9f9f9;
   border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sidebar h2 {
   color: #8a2be2;
   font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.sidebar h3 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#shortened-urls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .main-content {
@@ -35,28 +54,62 @@ body {
 h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
+  color: #333;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 input[type="text"],
-select,
-button {
-  margin-bottom: 10px;
+select {
   padding: 10px;
   font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select {
+  cursor: pointer;
 }
 
 button {
-  background-color: #8a2be2;
+  padding: 10px;
+  font-size: 1em;
   color: white;
+  background-color: #8a2be2;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #7a1bc0;
+}
+
+/* Style for shortened URL items */
+#shortened-urls a {
+  color: #8a2be2;
+  text-decoration: none;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#shortened-urls a:hover {
+  text-decoration: underline;
+}
+
+#shortened-urls .delete-icon {
+  color: #ccc;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#shortened-urls .delete-icon:hover {
+  color: #8a2be2;
 }

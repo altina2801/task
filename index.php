@@ -12,7 +12,7 @@
         <h2>anchorzup</h2>
         <h3>My shortened URLs</h3>
         <div id="shortened-urls">
-          <!-- PHP will load shortened URLs here -->
+         
           <?php include 'list_urls.php'; ?>
         </div>
       </div>
