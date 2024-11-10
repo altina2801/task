@@ -1,5 +1,5 @@
 <?php
-// Include the database connection
+
 include 'db_connection.php';
 
 if (isset($_GET['code'])) {

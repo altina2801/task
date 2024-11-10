@@ -8,7 +8,7 @@ try {
 
     if ($urls) {
         foreach ($urls as $url) {
-            // Check if the link is expired
+            
             if (is_null($url['expiry_time']) || strtotime($url['expiry_time']) > time()) {
                 echo '<li>';
                 echo '<a href="redirect.php?code=' . htmlspecialchars($url['short_code']) . '" target="_blank">';
@@ -32,13 +32,13 @@ try {
 <script>
 function deleteUrl(shortCode) {
     if (confirm("Are you sure you want to delete this URL?")) {
-        // Create an AJAX request to delete.php
+        
         fetch(`delete.php?code=${shortCode}`, { method: 'GET' })
             .then(response => response.text())
             .then(data => {
                 if (data === 'success') {
                     alert("URL deleted successfully.");
-                    location.reload(); // Reload the page to update the list
+                    location.reload(); 
                 } else {
                     alert("Error deleting URL.");
                 }

@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'short_code' => $short_code,
             'expiry_time' => $expiry_time
         ]);
-        header("Location: index.php");  // Redirect to index.php
+        header("Location: index.php");  
         exit();
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
